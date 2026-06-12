@@ -1,0 +1,15 @@
+Cursor Code Editor|C:\Program Files\cursor\Cursor.exe
+Google Chrome|C:\Program Files\Google\Chrome\Application\chrome.exe
+IntelliJ IDEA|C:\Program Files\JetBrains\IntelliJ IDEA 2025.2.2\bin\idea64.exe
+Git Bash|C:\Program Files\Git\git-bash.exe
+Steam|C:\Program Files (x86)\Steam\Steam.exe
+Cisco Packet Tracer|C:\Program Files\Cisco Packet Tracer 8.2.2\bin\PacketTracer.exe
+FileZilla FTP Client|C:\Program Files\FileZilla FTP Client\filezilla.exe
+Wireshark|C:\Program Files\Wireshark\Wireshark.exe
+WinRAR|C:\Program Files\WinRAR\WinRAR.exe
+Notepad|C:\Windows\System32\notepad.exe
+Calculator|C:\Windows\System32\calc.exe
+Paint|C:\Windows\System32\mspaint.exe
+Task Manager|C:\Windows\System32\taskmgr.exe
+Command Prompt|C:\Windows\System32\cmd.exe
+File Explorer|C:\Windows\explorer.exe
