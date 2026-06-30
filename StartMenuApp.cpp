@@ -6,6 +6,9 @@
 #include <sstream>
 #include <cwctype>
 
+// =========================================================
+// 1. INISIALISASI KELAS (CONSTRUCTOR)
+// =========================================================
 StartMenuApp::StartMenuApp(HINSTANCE hInstance) 
     : m_hInstance(hInstance), m_hWnd(NULL), 
       m_caretVisible(true), m_scrollOffset(0), 
@@ -14,6 +17,10 @@ StartMenuApp::StartMenuApp(HINSTANCE hInstance)
       m_hFontBold(NULL), m_hFontSmall(NULL), 
       m_hPowerIcon(NULL) {}
 
+// =========================================================
+// 2. PEMROSESAN DATA & MEMORI (DATA PARSER & HELPER)
+// Berisi fungsi penerjemah teks, path, dan pembaca file (.bmp / .txt)
+// =========================================================
 std::wstring StartMenuApp::ConvertToWide(const std::string& str) {
     if (str.empty()) return L"";
     int size_needed = MultiByteToWideChar(CP_UTF8, 0, &str[0], (int)str.size(), NULL, 0);
@@ -30,6 +37,9 @@ std::wstring StartMenuApp::GetExeDirectory() {
     return (pos == std::wstring::npos) ? L"" : path.substr(0, pos);
 }
 
+// =========================================================
+// 3. LOGIKA PENCARIAN (SEARCH LOGIC)
+// =========================================================
 bool StartMenuApp::ContainsSubstringCaseInsensitive(const std::wstring& str, const std::wstring& sub) {
     if (sub.empty()) return true;
     if (str.size() < sub.size()) return false;
@@ -146,6 +156,9 @@ void StartMenuApp::LoadApps() {
     m_filteredItems = m_appItems;
 }
 
+// =========================================================
+// 4. LOGIKA INTERAKSI (HOVER & COLLISION DETECTION)
+// =========================================================
 void StartMenuApp::UpdateHoverState(int mouseX, int mouseY) {
     bool stateChanged = false;
     int totalItems = (int)m_filteredItems.size();
@@ -180,6 +193,10 @@ void StartMenuApp::UpdateHoverState(int mouseX, int mouseY) {
     }
 }
 
+// =========================================================
+// 5. EVENT HANDLERS (MOUSE & KEYBOARD)
+// Menangani semua input fisik dari pengguna
+// =========================================================
 LRESULT StartMenuApp::OnCreate() {
     m_hFontMain = CreateFontW(16, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE, ANSI_CHARSET, 
                               OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, CLEARTYPE_QUALITY, 
@@ -323,6 +340,10 @@ LRESULT StartMenuApp::OnKillFocus() {
     return 0;
 }
 
+// =========================================================
+// 6. PENJEMBATAN VISUAL (RENDERING BRIDGE)
+// Mendelegasikan tugas menggambar ke UIRenderer
+// =========================================================
 LRESULT StartMenuApp::OnPaint() {
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(m_hWnd, &ps);
@@ -348,6 +369,10 @@ LRESULT StartMenuApp::OnPaint() {
     return 0;
 }
 
+// =========================================================
+// 7. SIKLUS HIDUP JENDELA & MESSAGE ROUTING
+// Pondasi Win32 API untuk membuat, menghancurkan, dan menjalankan jendela
+// =========================================================
 LRESULT StartMenuApp::OnDestroy() {
     KillTimer(m_hWnd, 1);
     if (m_hFontMain) DeleteObject(m_hFontMain);
