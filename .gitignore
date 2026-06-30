@@ -1,0 +1,25 @@
+# Compiled binaries / executables
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Object files and libraries
+*.o
+*.obj
+*.a
+*.lib
+
+# IDEs and Editors
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Temporary / Log files
+*.log

@@ -306,6 +306,13 @@ LRESULT StartMenuApp::OnLButtonDown(int mouseX, int mouseY) {
         }
     }
     
+    // Cek klik pada tombol Power
+    if (mouseX >= WINDOW_WIDTH - 56 && mouseX < WINDOW_WIDTH - 12 &&
+        mouseY >= 546 && mouseY < 586) {
+        DestroyWindow(m_hWnd);
+        return 0;
+    }
+    
     return 0;
 }
 

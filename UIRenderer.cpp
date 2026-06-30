@@ -132,14 +132,7 @@ void UIRenderer::DrawAppList(HDC hdcMem, HFONT hFontMain, const std::vector<AppI
             BITMAP bm;
             GetObject(filteredItems[i].hBitmap, sizeof(bm), &bm);
             
-            // [SEBELUM DIPERBAIKI - GAMBAR RUSAK & GEPENG]
-            // Kode di bawah ini akan memaksa gambar masuk ke kotak 24x24 tanpa anti-aliasing
-            StretchBlt(hdcMem, iconX, iconY, iconSize, iconSize, hdcBmp, 0, 0, bm.bmWidth, bm.bmHeight, SRCCOPY);
-            
-            /* 
             // [SESUDAH DIPERBAIKI - GAMBAR MULUS & PROPORSIONAL]
-            // Hapus komentar blok ini dan hapus StretchBlt di atas untuk presentasi
-            
             int oldMode = SetStretchBltMode(hdcMem, HALFTONE);
             SetBrushOrgEx(hdcMem, 0, 0, NULL);
             
@@ -160,7 +153,6 @@ void UIRenderer::DrawAppList(HDC hdcMem, HFONT hFontMain, const std::vector<AppI
                        hdcBmp, 0, 0, bm.bmWidth, bm.bmHeight, SRCCOPY);
                        
             SetStretchBltMode(hdcMem, oldMode);
-            */
                        
             SelectObject(hdcBmp, hOldBmp);
             DeleteDC(hdcBmp);
@@ -234,8 +226,8 @@ void UIRenderer::DrawFooter(HDC hdcMem, HFONT hFontMain, HICON hPowerIcon, bool 
     
     // Menggambar lingkaran setengah / terputus di atas (berlawanan jarum jam)
     Arc(hdcMem, cx - r, cy - r, cx + r, cy + r, 
-        cx + 6, cy - 8,   // Start (Kanan atas)
-        cx - 6, cy - 8);  // End (Kiri atas)
+        cx - 6, cy - 8,   // Start (Kiri atas)
+        cx + 6, cy - 8);  // End (Kanan atas)
         
     // Menggambar garis lurus vertikal di tengah atas
     MoveToEx(hdcMem, cx, cy - r - 2, NULL);
