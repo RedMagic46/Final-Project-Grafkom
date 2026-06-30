@@ -14,7 +14,8 @@ Proyek ini adalah tiruan dari Windows Start Menu yang dibuat menggunakan C++ dan
 
 ## Struktur File
 
-- `main.cpp` : Kode program utama (looping window, render GDI, input keyboard & mouse).
+- `src/` : Folder berisi source code C++ (`main.cpp`, `StartMenuApp.cpp`, `StartMenuApp.h`, `UIRenderer.cpp`, `UIRenderer.h`, `Globals.h`).
+- `assets/` : Folder berisi asset gambar bitmap ikon aplikasi (`.bmp`).
 - `apps.txt` : File text buat edit daftar aplikasi yang mau ditampilin (format: `Nama Aplikasi|Path File`).
 - `compile.bat` : Script compiler otomatis lewat g++ (MinGW).
 
@@ -22,5 +23,5 @@ Proyek ini adalah tiruan dari Windows Start Menu yang dibuat menggunakan C++ dan
 
 1. Pastikan **MinGW (GCC)** sudah terinstal di PC dan path-nya sudah disetting di Environment Variables.
 2. Klik dua kali file `compile.bat` buat compile program.
-3. Setelah selesai, buka file `App.exe` yang ada di folder yang sama.
+3. Setelah selesai, buka file `StartMenu.exe` yang ada di folder yang sama.
 4. Anda bisa mengedit daftar aplikasi langsung di file `apps.txt` tanpa perlu mengompilasi ulang kode program.

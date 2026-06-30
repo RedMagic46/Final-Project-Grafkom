@@ -7,7 +7,7 @@ echo Source files: main.cpp, StartMenuApp.cpp, UIRenderer.cpp
 echo Target: StartMenu.exe
 echo.
 
-g++ -O3 -mwindows main.cpp StartMenuApp.cpp UIRenderer.cpp -o StartMenu.exe -lgdi32 -lshell32 -luser32
+g++ -O3 -mwindows src\main.cpp src\StartMenuApp.cpp src\UIRenderer.cpp -o StartMenu.exe -lgdi32 -lshell32 -luser32
 
 if %errorlevel% neq 0 (
     echo.
@@ -22,9 +22,9 @@ if %errorlevel% neq 0 (
 echo.
 echo -----------------------------------------
 echo SUCCESS: Compilation completed successfully!
-echo Created: StartMenuClone.exe
+echo Created: StartMenu.exe
 echo -----------------------------------------
 echo.
-echo Double-click StartMenuClone.exe to run.
+echo Double-click StartMenu.exe to run.
 echo.
 pause

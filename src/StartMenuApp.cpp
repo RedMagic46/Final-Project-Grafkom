@@ -124,7 +124,7 @@ void StartMenuApp::LoadApps() {
         item.path = L"C:\\Windows\\System32\\notepad.exe";
         item.isHovered = false;
         
-        std::wstring defaultBmp = GetExeDirectory() + L"\\notepad.bmp";
+        std::wstring defaultBmp = GetExeDirectory() + L"\\assets\\notepad.bmp";
         item.hBitmap = LoadBitmapManually(defaultBmp);
         
         m_appItems.push_back(item);
@@ -147,7 +147,7 @@ void StartMenuApp::LoadApps() {
         item.path = ConvertToWide(path);
         item.isHovered = false;
         
-        std::wstring bmpPath = GetExeDirectory() + L"\\" + item.name + L".bmp";
+        std::wstring bmpPath = GetExeDirectory() + L"\\assets\\" + item.name + L".bmp";
         item.hBitmap = LoadBitmapManually(bmpPath);
         
         m_appItems.push_back(item);
